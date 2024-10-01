@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: TasksAPI
+
+  # Mysql
+  datasource:
+    url: jdbc:mysql://${DB_HOST}/tasks_api
+    username: root
+    password: ${DB_PASSWORD}
