@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS tasks(
-    id CHAR(36) NOT NULL,
+    id BIGINT NOT NULL AUTO_INCREMENT,
     title VARCHAR(150) NOT NULL,
     description VARCHAR(300) NOT NULL,
     expiration_date DATETIME NOT NULL,

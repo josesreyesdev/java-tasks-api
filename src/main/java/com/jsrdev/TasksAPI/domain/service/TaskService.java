@@ -24,7 +24,6 @@ public class TaskService {
     }
 
     public TaskResponse save(AddTaskRequest addTask) {
-        System.out.println("Add Task: " + addTask);
         var taskRequest = new Task(addTask);
         Task responseBD = taskRepository.save(taskRequest);
         return new TaskResponse(responseBD);

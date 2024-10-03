@@ -2,8 +2,12 @@ spring:
   application:
     name: TasksAPI
 
+  profiles:
+    active: dev
+
   # Mysql
   datasource:
-    url: jdbc:mysql://${DB_HOST}/tasks_api
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST}/task_api
     username: root
     password: ${DB_PASSWORD}
