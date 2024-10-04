@@ -3,14 +3,11 @@ package com.jsrdev.TasksAPI.domain.service;
 import com.jsrdev.TasksAPI.domain.repository.TaskRepository;
 import com.jsrdev.TasksAPI.domain.task.AddTaskRequest;
 import com.jsrdev.TasksAPI.domain.task.Task;
-import com.jsrdev.TasksAPI.domain.task.TaskResponse;
 import com.jsrdev.TasksAPI.domain.task.UpdateTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class TaskService {
@@ -37,9 +34,5 @@ public class TaskService {
 
     public void deleteTask(Task task) {
         taskRepository.delete(task);
-    }
-
-    public Optional<Task>isTaskInBD(Long id) {
-        return taskRepository.findById(id);
     }
 }
