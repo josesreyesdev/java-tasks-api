@@ -22,10 +22,9 @@ public class TaskService {
         return taskRepository.findAll(pageable);
     }
 
-    public TaskResponse save(AddTaskRequest addTask) {
+    public Task save(AddTaskRequest addTask) {
         var taskRequest = new Task(addTask);
-        Task responseBD = taskRepository.save(taskRequest);
-        return new TaskResponse(responseBD);
+        return taskRepository.save(taskRequest);
     }
 
     public Task getReferenceById(Long id) {
