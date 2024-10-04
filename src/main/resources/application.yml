@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: TasksAPI
+
+  profiles:
+    active: dev
+
+  # Mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST}/task_api
+    username: root
+    password: ${DB_PASSWORD}
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
