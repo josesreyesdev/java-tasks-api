@@ -40,4 +40,17 @@ public class Task {
         this.expirationDate = addTask.expirationDate();
         this.taskStatus = addTask.taskStatus();
     }
+
+    public void updateData(UpdateTask updateTask) {
+        if (updateTask.title() != null) {
+            this.title = updateTask.title();
+        }
+        if (updateTask.description() != null) {
+            this.description = updateTask.description();
+        }
+        if (updateTask.expirationDate() != null) {
+            this.expirationDate = updateTask.expirationDate();
+        }
+        this.taskStatus = updateTask.taskStatus();
+    }
 }

@@ -1,7 +1,6 @@
 package com.jsrdev.TasksAPI.domain.task;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public record TaskResponse(
         Long id,
