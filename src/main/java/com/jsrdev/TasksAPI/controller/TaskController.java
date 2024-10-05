@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -30,9 +31,11 @@ public class TaskController {
             @RequestBody @Valid AddTaskRequest addTask,
             UriComponentsBuilder uriBuilder
     ) {
-        var task = taskService.save(addTask);
-        var uri = uriBuilder.path("/tasks/{id}").buildAndExpand(task.getId()).toUri();
-        return ResponseEntity.created(uri).body(new TaskResponse(task));
+        Task task = taskService.save(addTask);
+        URI url = uriBuilder.path("/api/tasks/{id}")
+                .buildAndExpand(task.getId())
+                .toUri();
+        return ResponseEntity.created(url).body(new TaskResponse(task)); // status 201-created
     }
 
     @GetMapping
@@ -43,13 +46,13 @@ public class TaskController {
         List<TaskResponse> tasks = taskPage.stream()
                 .map(TaskResponse::new)
                 .toList();
-        return ResponseEntity.ok(tasks);
+        return ResponseEntity.ok(tasks); //status 200-ok
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<TaskResponse> getTask(@PathVariable Long id) {
         var task = taskService.getReferenceById(id);
-        return ResponseEntity.ok(new TaskResponse(task));
+        return ResponseEntity.ok(new TaskResponse(task)); // status 200-ok
     }
 
     @PutMapping
@@ -57,7 +60,7 @@ public class TaskController {
     public ResponseEntity<TaskResponse> update(@RequestBody @Valid UpdateTask updateTask) {
         Task task = taskService.getReferenceById(updateTask.id());
         taskService.updateTask(task, updateTask);
-        return ResponseEntity.ok(new TaskResponse(task));
+        return ResponseEntity.ok(new TaskResponse(task)); //status 200-ok
     }
 
     @DeleteMapping("/{id}")
@@ -65,6 +68,6 @@ public class TaskController {
     public ResponseEntity<TaskResponse> delete(@PathVariable Long id) {
         Task task = taskService.getReferenceById(id);
         taskService.deleteTask(task);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); //status 204-No Content
     }
 }
