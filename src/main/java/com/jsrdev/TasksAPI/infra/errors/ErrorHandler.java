@@ -1,4 +1,4 @@
-package com.jsrdev.TasksAPI.infra;
+package com.jsrdev.TasksAPI.infra.errors;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
