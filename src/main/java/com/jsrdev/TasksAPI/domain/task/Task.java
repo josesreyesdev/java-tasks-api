@@ -51,6 +51,8 @@ public class Task {
         if (updateTask.expirationDate() != null) {
             this.expirationDate = updateTask.expirationDate();
         }
-        this.taskStatus = updateTask.taskStatus();
+        if (updateTask.taskStatus() != null) {
+            this.taskStatus = updateTask.taskStatus();
+        }
     }
 }
