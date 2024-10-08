@@ -33,7 +33,7 @@ public class User implements UserDetails {
     public User(AddUserRequest addUser, PasswordEncoder encoder) {
         this.login = addUser.login();
         this.password = passwordEncoder(addUser.password(), encoder);
-        this.role = addUser.role();
+        this.role = (addUser.role() == null) ? UserRole.USER : addUser.role();
         this.active = true;
     }
 
@@ -85,6 +85,9 @@ public class User implements UserDetails {
         }
         if (updateUser.role() != null) {
             this.role = updateUser.role();
+        }
+        if (updateUser.active() != null) {
+            this.active = updateUser.active();
         }
     }
 
