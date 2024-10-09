@@ -1,4 +1,4 @@
-package com.jsrdev.TasksAPI.domain.task;
+package com.jsrdev.TasksAPI.domain.models.task;
 
 import java.time.LocalDateTime;
 

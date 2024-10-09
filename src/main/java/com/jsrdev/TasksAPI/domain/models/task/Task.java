@@ -1,4 +1,4 @@
-package com.jsrdev.TasksAPI.domain.task;
+package com.jsrdev.TasksAPI.domain.models.task;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -51,6 +51,8 @@ public class Task {
         if (updateTask.expirationDate() != null) {
             this.expirationDate = updateTask.expirationDate();
         }
-        this.taskStatus = updateTask.taskStatus();
+        if (updateTask.taskStatus() != null) {
+            this.taskStatus = updateTask.taskStatus();
+        }
     }
 }
