@@ -1,6 +1,6 @@
 package com.jsrdev.TasksAPI.domain.models.auth;
 
-public record AuthData(
+public record SignIn(
         String login,
         String pass
 ){}
