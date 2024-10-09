@@ -1,4 +1,4 @@
-package com.jsrdev.TasksAPI.domain.task;
+package com.jsrdev.TasksAPI.domain.models.task;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Future;

@@ -1,9 +1,9 @@
 package com.jsrdev.TasksAPI.domain.service;
 
 import com.jsrdev.TasksAPI.domain.repository.UserRepository;
-import com.jsrdev.TasksAPI.domain.user.AddUserRequest;
-import com.jsrdev.TasksAPI.domain.user.UpdateUser;
-import com.jsrdev.TasksAPI.domain.user.User;
+import com.jsrdev.TasksAPI.domain.models.user.AddUserRequest;
+import com.jsrdev.TasksAPI.domain.models.user.UpdateUser;
+import com.jsrdev.TasksAPI.domain.models.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

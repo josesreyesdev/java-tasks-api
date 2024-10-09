@@ -1,4 +1,4 @@
-package com.jsrdev.TasksAPI.domain.user;
+package com.jsrdev.TasksAPI.domain.models.user;
 
 import lombok.Getter;
 

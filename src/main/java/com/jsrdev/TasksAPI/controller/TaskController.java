@@ -1,10 +1,10 @@
 package com.jsrdev.TasksAPI.controller;
 
 import com.jsrdev.TasksAPI.domain.service.TaskService;
-import com.jsrdev.TasksAPI.domain.task.AddTaskRequest;
-import com.jsrdev.TasksAPI.domain.task.Task;
-import com.jsrdev.TasksAPI.domain.task.TaskResponse;
-import com.jsrdev.TasksAPI.domain.task.UpdateTask;
+import com.jsrdev.TasksAPI.domain.models.task.AddTaskRequest;
+import com.jsrdev.TasksAPI.domain.models.task.Task;
+import com.jsrdev.TasksAPI.domain.models.task.TaskResponse;
+import com.jsrdev.TasksAPI.domain.models.task.UpdateTask;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

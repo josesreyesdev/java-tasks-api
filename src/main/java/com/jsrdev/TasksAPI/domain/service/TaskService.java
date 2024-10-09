@@ -1,9 +1,9 @@
 package com.jsrdev.TasksAPI.domain.service;
 
 import com.jsrdev.TasksAPI.domain.repository.TaskRepository;
-import com.jsrdev.TasksAPI.domain.task.AddTaskRequest;
-import com.jsrdev.TasksAPI.domain.task.Task;
-import com.jsrdev.TasksAPI.domain.task.UpdateTask;
+import com.jsrdev.TasksAPI.domain.models.task.AddTaskRequest;
+import com.jsrdev.TasksAPI.domain.models.task.Task;
+import com.jsrdev.TasksAPI.domain.models.task.UpdateTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

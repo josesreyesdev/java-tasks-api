@@ -1,6 +1,6 @@
 package com.jsrdev.TasksAPI.domain.repository;
 
-import com.jsrdev.TasksAPI.domain.user.User;
+import com.jsrdev.TasksAPI.domain.models.user.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
