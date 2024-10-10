@@ -22,10 +22,10 @@ public class AuthService implements UserDetailsService {
         return userRepository.findByLogin(username);
     }
 
-    public User signUp(SignUp signUp) {
+    public User signUp(SignUp signUp) throws InvalidJwtException {
 
         if (userRepository.findByLogin(signUp.login()) != null) {
-            throw new InvalidJwtException("Username already exist");
+            throw new InvalidJwtException("Username/Login already exist");
         }
 
         String encryptedPass = passwordEncoder(signUp.password());

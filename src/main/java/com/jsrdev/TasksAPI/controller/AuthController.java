@@ -50,6 +50,7 @@ public class AuthController {
     // login
     @PostMapping("/signin")
     public ResponseEntity<JWTTokenData> signIn(@RequestBody @Valid SignIn data) {
+
         var usernamePassAuth = new UsernamePasswordAuthenticationToken(data.login(), data.pass());
 
         var authUser = authenticationManager.authenticate(usernamePassAuth);
