@@ -1,7 +1,7 @@
 # JWT
 api:
   security:
-    secret: ${JWT_TOKEN}
+    secret: ${JWT_KEY}
 #security:jwt:token:secret-key: ${JWT_TOKEN}
 
 spring:

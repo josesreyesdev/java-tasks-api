@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,10 +29,10 @@ public class User implements UserDetails {
     private UserRole role;
     private Boolean active;
 
-    public User(AddUserRequest addUser, PasswordEncoder encoder) {
-        this.login = addUser.login();
-        this.password = passwordEncoder(addUser.password(), encoder);
-        this.role = (addUser.role() == null) ? UserRole.USER : addUser.role();
+    public User(String user, String pass, UserRole role) {
+        this.login = user;
+        this.password = pass;
+        this.role = (role == null) ? UserRole.USER : role;
         this.active = true;
     }
 
@@ -79,9 +78,9 @@ public class User implements UserDetails {
         return true;
     }
 
-    public void updateData(UpdateUser updateUser, PasswordEncoder encoder) {
+    public void updateData(UpdateUser updateUser) {
         if (updateUser.password() != null) {
-            this.password = passwordEncoder(updateUser.password(), encoder);
+            this.password = updateUser.password();
         }
         if (updateUser.role() != null) {
             this.role = updateUser.role();
@@ -89,10 +88,6 @@ public class User implements UserDetails {
         if (updateUser.active() != null) {
             this.active = updateUser.active();
         }
-    }
-
-    private String passwordEncoder(String password, PasswordEncoder encoder) {
-        return encoder.encode(password);
     }
 
     public void deactivateUser() {
